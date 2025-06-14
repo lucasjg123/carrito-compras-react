@@ -8,10 +8,9 @@ export const Card = ({
   precio,
   handleAgregar,
   handleQuitar,
-  handleAumentar,
-  handleDisminuir,
+  selected,
 }) => {
-  const [added, setadded] = useState(false);
+  const [added, setadded] = useState(selected);
   const clickAgregar = () => {
     handleAgregar();
     setadded(true);

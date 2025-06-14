@@ -2,13 +2,8 @@ import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 
 export const CarritoPage = () => {
-  const {
-    listaCompras,
-    agregarCompra,
-    aumentarCantidad,
-    disminuirCantidad,
-    eliminarCompra,
-  } = useContext(CarritoContext);
+  const { listaCompras, aumentarCantidad, disminuirCantidad, eliminarCompra } =
+    useContext(CarritoContext);
   console.log(listaCompras);
 
   const calcularTotal = () => {
@@ -73,7 +68,11 @@ export const CarritoPage = () => {
         </tbody>
       </table>
       <div className="d-grid grap-2">
-        <button className="btn btn-primary" onClick={handleImpresion}>
+        <button
+          className="btn btn-primary"
+          onClick={handleImpresion}
+          disabled={listaCompras < 1}
+        >
           COMPRAR
         </button>
       </div>

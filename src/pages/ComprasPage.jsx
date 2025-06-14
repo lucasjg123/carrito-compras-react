@@ -5,13 +5,8 @@ import { CarritoContext } from "../context/CarritoContext";
 
 export const ComprasPage = () => {
   const { productos } = useContext(ProductosContext);
-  const {
-    listaCompras,
-    agregarCompra,
-    aumentarCantidad,
-    disminuirCantidad,
-    eliminarCompra,
-  } = useContext(CarritoContext);
+  const { listaCompras, agregarCompra, eliminarCompra } =
+    useContext(CarritoContext);
 
   const handleAgregar = (compra) => {
     agregarCompra(compra);
@@ -19,8 +14,6 @@ export const ComprasPage = () => {
   const handleQuitar = (id) => {
     eliminarCompra(id);
   };
-  const handleAumentar = (id) => {};
-  const handleDisminuir = (id) => {};
 
   return (
     <>
@@ -35,6 +28,7 @@ export const ComprasPage = () => {
           precio={producto.price}
           handleAgregar={() => handleAgregar(producto)}
           handleQuitar={() => handleQuitar(producto.id)}
+          selected={listaCompras.some((objeto) => objeto.id === producto.id)}
         ></Card>
       ))}
     </>
