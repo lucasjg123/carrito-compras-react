@@ -6,3 +6,5 @@ El proyecto cuenta con:
   - Con posibilidad de aumentar o disminuir la cantidad de cada uno de ellos
   - Botón de comprar el cual genera un pdf con el listado de compra para imprimir
 > Icono de carrito dinamico con contador de productos agregados
+
+Proyecto desplegado: https://lucasjg-carrito-compras.netlify.app/
